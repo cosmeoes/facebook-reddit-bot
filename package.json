@@ -1,0 +1,16 @@
+{
+  "name": "facebook_reddit_bot",
+  "version": "1.0.0",
+  "description": "a bot that takes post from reddit and post them on fb",
+  "main": "bot1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "reddit",
+    "facebook"
+  ],
+  "author": "Cosme Escobedo",
+  "license": "ISC"
+}
