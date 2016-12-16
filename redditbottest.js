@@ -82,17 +82,18 @@ const r = new snoowrap({
 //	}
 //	console.log("posted on /r/aww:\n" +submitions[count].title+"\n-by /u/"+submitions[count].author.name+" "+ submitions[count].url);
 //});
-console.log("url.gifv".substr(-4) === "gifv");
-r.getSubreddit('pic').getHot().then(function(submitions){
+
+r.getSubreddit("todayilearned").getHot().then(function(submitions){
 	var count;
-	console.log(submitions[3]);
+	
 	for(var i =0;submitions.length;i++){
-		
+		console.log(submitions[i]);
+		console.log(submitions[i].url.substr(-4) === "gifv");
 		if(!submitions[i].stickied){
 			count=i;
 			break;
 		}
-		console.log('stickied post skiped');
+		//console.log('stickied post skipe');
 	}
 	//console.log(submitions[count]);
 });

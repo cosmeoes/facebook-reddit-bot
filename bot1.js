@@ -78,17 +78,22 @@ function postFromSubRedditWithUrl(subreddit){
 	r.getSubreddit(subreddit).getHot().then(function(submitions){
 		var count;
 		for(var i =0;submitions.length;i++){
-			if(!submitions[i].stickied && !submitions[i].over_18 && !submitions[i].url.substr(-4) === "gifv"){
+			if(i == submitions.length-1){
 				count=i;
 				break;
 			}
+			if(!submitions[i].stickied && !submitions[i].over_18 && submitions[i].url.substr(-4) != "gifv"){
+				count=i;
+				break;
+			}
+
 			console.log('gifv, post stickied or nsfw skiped');
 		}
 
 		if(submitions[count].domain.indexOf('i.redd.it')>-1 || submitions[count].domain.indexOf('i.imgur')>-1){
 			postimage(submitions[count].title+"\n-by /u/"+submitions[count].author.name,submitions[count].url);
 		}else{
-			post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions.subreddit.display_name ,submitions[count].url);
+			post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name ,submitions[count].url);
 		}
 	});
 }
@@ -96,7 +101,7 @@ function postFromSubRedditWithUrl(subreddit){
 function postFromSubRedditWithOutUrl(subreddit){
 	r.getSubreddit(subreddit).getHot().then(function(submitions){
 		var count;
-		for(var i =0;submitions.length;i++){
+		for(var i =0;i< submitions.length;i++){
 			
 			if(!submitions[i].stickied && !submitions[i].over_18){
 				count=i;
