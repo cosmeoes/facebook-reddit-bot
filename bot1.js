@@ -91,7 +91,7 @@ function postFromSubRedditWithUrl(subreddit){
 		}
 
 		if(submitions[count].domain.indexOf('i.redd.it')>-1 || submitions[count].domain.indexOf('i.imgur')>-1){
-			postimage(submitions[count].title+"\n-by /u/"+submitions[count].author.name,submitions[count].url);
+			postimage(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name,submitions[count].url);
 		}else{
 			post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name ,submitions[count].url);
 		}
@@ -109,14 +109,14 @@ function postFromSubRedditWithOutUrl(subreddit){
 			}
 			console.log('stickied post skiped');
 		}
-		post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions.subreddit.display_name);
+		post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name);
 	});
 }
 
 
 
 function postimage(mensaje, link){
-	FB.api('RedditStuff/photos',{caption:mensaje, url:link,picture:link},function(res){
+	FB.api('me/photos',{caption:mensaje, url:link,picture:link},function(res){
 		if(!res || res.error){
 	    	console.log(!res ? 'error occurred' : res.error);
 	    	post(mensaje,link);
