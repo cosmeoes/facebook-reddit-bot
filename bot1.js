@@ -1,6 +1,7 @@
 //seting up fb api wrapper
 var FB = require('fb');
-FB.setAccessToken('EAAbJ6X4F5c8BAGnz4whsi158bVbfsHBC6mGCDxD6p3iCDo2e98ZCppSmSOrsQszzHcAkRTbb8dNFQBAz60fyQVLI2auly8ZAps92laBeq55dvVwypBqxs7JHw11RpFLwCzqQNbhlu8rPUPD7378FvSWdFQNkEZD');
+//expira 13 mayo 2017
+FB.setAccessToken('EAAbJ6X4F5c8BAAZCZBDZCA15R4WXMLHmAsEDwOtFoZCFRCcuvffDO9tZBqQsQxv3oeK7lwhaMTjWjvloLIQ30zpTi6DMsiZCQAQsQZAZAehMqkiGki6E5JmLZCPk8U1oJrp9xeKqpXmTxNzHXHPsMVrXW7PXpPOZBT6qFYsr3BfbiRiAZDZD');
 
 
 //seting oup reddit api wrapper
@@ -47,10 +48,10 @@ const r = new snoowrap({
 });*/
 
 setInterval(postFromSubRedditWithUrl, 1000*60*60*9,"videos");
-setInterval(postFromSubRedditWithUrl, 1000*60*60*4,"todayilearned");
+setInterval(postFromSubRedditWithUrl, 1000*60*60*12,"todayilearned");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*7,"funny");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*24,"gifs");
-setInterval(postFromSubRedditWithOutUrl, 1000*60*60*15,"LifeProTips");
+setInterval(postFromSubRedditWithUrl, 1000*60*60*15,"LifeProTips");
 setInterval(postFromSubRedditWithOutUrl, 1000*60*60*6,"Showerthoughts");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*9,"aww");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*6,"pics");
