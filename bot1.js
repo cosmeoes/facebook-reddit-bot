@@ -46,7 +46,16 @@ const r = new snoowrap({
 
 	})
 });*/
+var array=["videos","todayilearned","funny","gifs","LifeProTips","aww",
+	   "pics","movies","AdviceAnimals","AnimalsBeingJerks","facepalm",
+           "thisismylifenow","mildlyinteresting","comics","interestingasfuck",
+	   "Unexpected","instant_regret","ChildrenFallingOver","BikiniBottomTwitter",
+	   "PerfectTiming"];
+var cont=0;
+setInterval(postFromSubRedditWithUrl,1000*60*60*4,array[cont]);
+setInterval(postFromSubRedditWithOutUrl, 1000*60*60*24,"Showerthoughts");
 
+/*
 setInterval(postFromSubRedditWithUrl, 1000*60*60*9,"videos");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*12,"todayilearned");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*7,"funny");
@@ -68,9 +77,7 @@ setInterval(postFromSubRedditWithUrl, 1000*60*60*12,"instant_regret");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*10,"ChildrenFallingOver");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*11,"BikiniBottomTwitter");
 setInterval(postFromSubRedditWithUrl, 1000*60*60*10,"PerfectTiming");
-
-
-
+*/
 
 
 
@@ -97,6 +104,7 @@ function postFromSubRedditWithUrl(subreddit){
 			post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name ,submitions[count].url);
 		}
 	});
+	cont++;
 }
 
 function postFromSubRedditWithOutUrl(subreddit){
