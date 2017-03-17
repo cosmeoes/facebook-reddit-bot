@@ -2,7 +2,8 @@
 var FB = require('fb');
 //expira 13 mayo 2017
 FB.setAccessToken('EAAbJ6X4F5c8BAAZCZBDZCA15R4WXMLHmAsEDwOtFoZCFRCcuvffDO9tZBqQsQxv3oeK7lwhaMTjWjvloLIQ30zpTi6DMsiZCQAQsQZAZAehMqkiGki6E5JmLZCPk8U1oJrp9xeKqpXmTxNzHXHPsMVrXW7PXpPOZBT6qFYsr3BfbiRiAZDZD');
-
+//sleep thread variable
+var sleep = require('system-sleep');
 
 //seting oup reddit api wrapper
 'use strict';
@@ -52,7 +53,11 @@ var array=["videos","todayilearned","funny","gifs","LifeProTips","aww",
 	   "Unexpected","instant_regret","ChildrenFallingOver","BikiniBottomTwitter",
 	   "PerfectTiming"];
 var cont=0;
-setInterval(postFromSubRedditWithUrl,1000*60*60*4,array[cont]);
+for(var i=0;i<array.length){
+   	postFromSubredditWithUrl(array[i]);	
+   	sleep(1000*60*60*4);
+}
+//setInterval(postFromSubRedditWithUrl,1000*60*60*4,array[cont]);
 setInterval(postFromSubRedditWithOutUrl, 1000*60*60*24,"Showerthoughts");
 
 /*
@@ -98,13 +103,15 @@ function postFromSubRedditWithUrl(subreddit){
 			console.log('gifv, post stickied or nsfw skiped');
 		}
 
+
 		if(submitions[count].domain.indexOf('i.redd.it')>-1 || submitions[count].domain.indexOf('i.imgur')>-1){
 			postimage(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name,submitions[count].url);
 		}else{
 			post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name ,submitions[count].url);
 		}
+		cont++;
 	});
-	cont++;
+	
 }
 
 function postFromSubRedditWithOutUrl(subreddit){
