@@ -54,7 +54,7 @@ var array=["videos","todayilearned","funny","gifs","LifeProTips","aww",
 	   "PerfectTiming"];
 var cont=0;
 for(var i=0;i<array.length;i++){
-   	postFromSubredditWithUrl(array[i]);	
+   	postFromSubRedditWithUrl(array[i]);	
    	sleep(1000*60*60*4);
 }
 //setInterval(postFromSubRedditWithUrl,1000*60*60*4,array[cont]);
