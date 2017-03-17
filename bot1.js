@@ -53,7 +53,7 @@ var array=["videos","todayilearned","funny","gifs","LifeProTips","aww",
 	   "Unexpected","instant_regret","ChildrenFallingOver","BikiniBottomTwitter",
 	   "PerfectTiming"];
 var cont=0;
-for(var i=0;i<array.length){
+for(var i=0;i<array.length;i++){
    	postFromSubredditWithUrl(array[i]);	
    	sleep(1000*60*60*4);
 }
