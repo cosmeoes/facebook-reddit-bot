@@ -1,7 +1,7 @@
 //seting up fb api wrapper
 var FB = require('fb');
 //expira 13 mayo 2017
-FB.setAccessToken('EAAbJ6X4F5c8BAAZCZBDZCA15R4WXMLHmAsEDwOtFoZCFRCcuvffDO9tZBqQsQxv3oeK7lwhaMTjWjvloLIQ30zpTi6DMsiZCQAQsQZAZAehMqkiGki6E5JmLZCPk8U1oJrp9xeKqpXmTxNzHXHPsMVrXW7PXpPOZBT6qFYsr3BfbiRiAZDZD');
+FB.setAccessToken('FACEBOOK ACESS TOKEN GOES HERE');
 //sleep thread variable
 var sleep = require('system-sleep');
 
@@ -10,11 +10,11 @@ var sleep = require('system-sleep');
 const snoowrap = require('snoowrap');
 
 const r = new snoowrap({
-	userAgent: 'redditposter',
-  	clientId: 'Cqx8SkZO8ppXIQ',
-  	clientSecret: 'Zgf9SGtSCJmGvLLz4OYqV37KPcQ',
-  	username: 'Pm_happy_thoughts',
-  	password: 'omarsito1'
+	userAgent: '',
+  	clientId: '',
+  	clientSecret: '',
+  	username: '',
+  	password: ''
 });
 
 //photoshopbattes not jet implemented
@@ -52,7 +52,6 @@ var array=["videos","todayilearned","funny","gifs","LifeProTips","aww",
            "thisismylifenow","mildlyinteresting","comics","interestingasfuck",
 	   "Unexpected","instant_regret","ChildrenFallingOver","BikiniBottomTwitter",
 	   "PerfectTiming"];
-var cont=0;
 for(var i=0;i<array.length;i++){
    	postFromSubRedditWithUrl(array[i]);	
    	sleep(1000*60*60*4);
@@ -109,7 +108,7 @@ function postFromSubRedditWithUrl(subreddit){
 		}else{
 			post(submitions[count].title+"\n-by /u/"+submitions[count].author.name+" on /r/"+submitions[count].subreddit.display_name ,submitions[count].url);
 		}
-		cont++;
+		
 	});
 	
 }
